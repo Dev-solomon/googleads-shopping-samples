@@ -12,7 +12,7 @@ from shopping.content.products.tools import analyze_variants
 UINT32_MAX = 4294967295
 
 # function to be called
-func_call = get_womenclothes()[:2]
+func_call = get_womenclothes()
 # list to add
 products = []
 
@@ -66,7 +66,7 @@ for product in func_call:
             }
         })
         
-print(products)
+# print(products)
 
 def main(argv):
     # Authenticate and construct service.
@@ -91,6 +91,9 @@ def main(argv):
                 print(json.dumps(errors, sort_keys=True, indent=2, separators=(',', ': ')))
     else:
         print(f'There was an error. Response: {result}')
+    
+    # FOR TEST PURPOSES
+    # print(result.get('entries')) 
 
 if __name__ == '__main__':
     main(sys.argv)

@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Assuming you have a MongoDB connection URI
 # Assuming you have a MongoDB connection URI
-client = MongoClient("mongodb+srv://SolomonNtia:solomon7@cluster0.6ocpeqp.mongodb.net/")
+client = MongoClient("mongodb+srv://SolomonNtia:%40Jedidiah7@cluster0.6ocpeqp.mongodb.net/")
 db = client["liziestyle"]
 
 
