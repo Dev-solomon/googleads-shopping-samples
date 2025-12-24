@@ -5,14 +5,14 @@ import json
 # The common module provides setup functionality used by the samples,
 # such as authentication and unique id generation.
 from shopping.content import common
-from shopping.content.products.tools.db_calls import get_womenclothes
+from shopping.content.products.tools.db_calls import get_customs
 from shopping.content.products.tools import analyze_variants
 
 # Define the UINT32 max value
 UINT32_MAX = 4294967295
 
 # function to be called
-func_call = get_womenclothes()
+func_call = get_customs()
 # list to add
 products = []
 
@@ -39,8 +39,8 @@ for product in func_call:
                 "description": product['description'],
                 "link": f"https://www.liziestyle.com/product_detail/{product['_id']}",
                 "imageLink": product['images'][0],
-                "contentLanguage": 'it',
-                "targetCountry": 'IT',
+                "contentLanguage": 'us',
+                "targetCountry": 'US',
                 "channel": 'online',
                 "availability": 'in stock',
                 "color": color,
@@ -48,15 +48,15 @@ for product in func_call:
                 "googleProductCategory": googleProductCategory,
                 "price": {
                     "value": product['price'],
-                    "currency": 'EUR'
+                    "currency": 'USD'
                 },
                 "sizes": sizes,
                 "shipping": [{
-                    "country": 'IT',  # Corrected the shipping country to IT
+                    "country": 'US',  # Corrected the shipping country to IT
                     'service': 'Standard shipping',
                     'price': {
-                        'value': '5',
-                        'currency': 'EUR'
+                        'value': '7.5',
+                        'currency': 'USD'
                     }
                 }],
                 "shippingWeight": {

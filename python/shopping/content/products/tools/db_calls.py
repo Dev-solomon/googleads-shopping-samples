@@ -2,17 +2,27 @@ from pymongo import DESCENDING
 from shopping.content.products.tools.product_model import Product
 
 
+# func to get women clothes from database
+def get_customs():
+    try:
+        skip = 0
+        limit = 10
+        # Fetch products from the collection based on query and pagination
+        products_list = list(Product.collection.find({"category": "customs"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))    
+       
+        return products_list
 
+    except Exception as e:
+        return print({"message": str(e)})
+    
 # func to get women clothes from database
 def get_womenclothes():
     try:
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "donne"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
-        
+        products_list = list(Product.collection.find({"category": "womens"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
+          
         return products_list
 
     except Exception as e:
@@ -24,9 +34,7 @@ def get_menclothes():
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "uomini"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
+        products_list = list(Product.collection.find({"category": "mens"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
         
         return products_list
 
@@ -39,10 +47,8 @@ def get_shoes():
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "scarpe"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
-        
+        products_list = list(Product.collection.find({"category": "shoes"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
+         
         return products_list
 
     except Exception as e:
@@ -54,10 +60,8 @@ def get_jewelries():
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "accessori"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
-        
+        products_list = list(Product.collection.find({"category": "accessories"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
+             
         return products_list
 
     except Exception as e:
@@ -70,9 +74,7 @@ def get_household():
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "famiglia"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
+        products_list = list(Product.collection.find({"category": "household"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
         
         return products_list
 
@@ -86,10 +88,8 @@ def get_beauty():
         skip = 0
         limit = 100
         # Fetch products from the collection based on query and pagination
-        products_list = list(Product.collection.find({"category": "bellezza"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
-        
-       
-        
+        products_list = list(Product.collection.find({"category": "beauty"}).sort("createdAt", DESCENDING).limit(limit).skip(skip))
+             
         return products_list
 
     except Exception as e:
